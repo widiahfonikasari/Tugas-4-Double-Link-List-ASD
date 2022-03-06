@@ -100,6 +100,19 @@ void deleteAfter(int posisi){
 	delete del;
 }
 
+bool searchNode(string judul, string pengarang, int tahun_t, int posisi){
+    newNode = new Buku();
+	newNode->judul = judul;
+	newNode->pengarang = pengarang;
+	newNode->tahun_terbit = tahun_t;
+    while (cur != NULL){
+        if (cur->tahun_terbit == posisi)
+            return true;
+        cur = cur->next;
+    }
+    return false;
+}
+
 //print double linked list
 void printDoubleLinkedList(){
 		cur = head;
@@ -145,6 +158,16 @@ int main(){
 	deleteAfter(3);
 	printDoubleLinkedList();
 	cout<<"\n\n"<<endl;
+	
+	searchNode("Kebumian", "Ratna Harto", 2017, 3);
+	printDoubleLinkedList();
+	int tahun_terbit= 2013;
+	
+    if (tahun_terbit >= 2013 && tahun_terbit >2018){
+        cout<<"\nPosisi "<<tahun_terbit<<" Data Tidak Ditemukan";
+    }else{
+        cout<<"\nPosisi "<<tahun_terbit<<" Data Ditemukan";
+	}
 	
 	return 0;
 }
