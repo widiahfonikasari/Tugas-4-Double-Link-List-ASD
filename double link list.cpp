@@ -92,7 +92,7 @@ void insertAfter(string judul, string pengarang, int tahun_t, int posisi){
 	
 	afterNode = cur->next;
 	newNode->prev = cur;
-	newNode->next - afterNode;
+	newNode->next = afterNode;
 	cur->next =newNode;
 	afterNode->prev = newNode;
 	}
